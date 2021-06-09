@@ -74,11 +74,11 @@ def scrape():
     # Storing Data in Dictionary
 
     mars_data = {
-        'News Title': news_title,
-        'News Paragraph': news_p,
-        'Featured Image': featured_image_url,
+        'News_Title': news_title,
+        'News_Paragraph': news_p,
+        'Featured_Image': featured_image_url,
         'Table': html_table,
-        'Hemisphere Images': hemisphere_image_urls
+        'Hemisphere_Images': hemisphere_image_urls
     }
 
     # Returning results of Scrape
