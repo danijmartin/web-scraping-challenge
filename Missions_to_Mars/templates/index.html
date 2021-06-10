@@ -44,7 +44,7 @@
             {% for image in data.Hemisphere_Images %}
                 <div class="col-md-3">
                     <div class="card">
-                        <embed width=100% type="image/tiff" src={{image.img_url}} alt={{image.title}}>
+                        <img width=100% src={{image.img_url}} alt={{image.title}}>
                         <div class="card-body">
                             <p class="text-center"><b>{{image.title}}</b></p>
                         </div>
