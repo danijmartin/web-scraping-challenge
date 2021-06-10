@@ -32,10 +32,10 @@ def scrape():
     url = 'https://galaxyfacts-mars.com/'
 
     # Using Pandas to read Mars Facts tables
-    tables = pd.read_html(url)
+    tables = pd.read_html(url, header=0, index_col=0)
 
     # Storing Mars facts table
-    mars_facts_df = tables[1]
+    mars_facts_df = tables[0]
 
     # Converting table to html code
     html_table = mars_facts_df.to_html()
