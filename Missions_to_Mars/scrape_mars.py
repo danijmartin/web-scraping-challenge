@@ -38,7 +38,7 @@ def scrape():
     mars_facts_df = tables[0]
 
     # Converting table to html code
-    html_table = mars_facts_df.to_html(classes="table table-striped")
+    html_table = mars_facts_df.to_html(justify="left", classes="table table-striped")
 
     # Removing new lines in html_table
     html_table = html_table.replace('\n', '')
