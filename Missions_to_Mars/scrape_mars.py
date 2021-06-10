@@ -41,7 +41,7 @@ def scrape():
     html_table = mars_facts_df.to_html()
 
     # Removing new lines in html_table
-    html_table.replace('\n', '')
+    html_table = html_table.replace('\n', '')
 
     # Connecting Mars Hemispheres url
     url = 'https://marshemispheres.com/'
