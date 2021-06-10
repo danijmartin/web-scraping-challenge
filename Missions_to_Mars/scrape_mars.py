@@ -47,13 +47,19 @@ def scrape():
     url = 'https://marshemispheres.com/'
     browser.visit(url)
 
-    links = []
+    # Scraping page into Soup
+    html = browser.html
+    soup = bs(html, 'html.parser')
 
-    divs = browser.find_by_tag("div[class='item']")
+    starter = []
 
-    for div in divs:
-        link = divs.find_by_tag('a')['href']
-        links.append(link)
+    for link in soup.find_all('a', class_='itemLink product-item'):
+        x = link.get('href')
+        y = (url + x)
+        starter.append(y)
+
+    starter.remove('https://marshemispheres.com/#')
+    links = set(starter)
 
     hemisphere_image_urls = []
 
@@ -80,6 +86,7 @@ def scrape():
         'Table': html_table,
         'Hemisphere_Images': hemisphere_image_urls
     }
-
+ 
     # Returning results of Scrape
     return mars_data
+
